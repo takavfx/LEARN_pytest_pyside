@@ -1,0 +1,6 @@
+# Ignore DevEnv Directories
+.venv/
+.vscode/
+
+# Ignore Cache
+__pycache__/
