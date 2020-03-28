@@ -4,15 +4,18 @@ from PySide2 import QtWidgets
 
 
 class SampleDialog(QtWidgets.QDialog):
+
     def __init__(self, *args):
         super(SampleDialog, self).__init__(*args)
         
+        self.number = 0
+
         self.setWindowTitle('Hello, World!')
         self.resize(300, 200)
 
         layout = QtWidgets.QVBoxLayout()
 
-        self.label = QtWidgets.QLabel('0')
+        self.label = QtWidgets.QLabel(str(self.number))
 
         layout.addWidget(self.label)
 
@@ -23,14 +26,12 @@ class SampleDialog(QtWidgets.QDialog):
         layout.addWidget(self.button)
 
         self.setLayout(layout)
-
         self.resize(200, 100)
 
 
     def add_count(self):
-        number = int(self.label.text())
-        number += 2
-        self.label.setText(str(number))
+        self.number += 1
+        self.label.setText(str(self.number))
 
 
 def main():

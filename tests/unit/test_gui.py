@@ -1,7 +1,5 @@
 import sys
 
-import pytest
-
 from PySide2 import QtCore
 from PySide2 import QtWidgets
 from PySide2 import QtTest
@@ -17,9 +15,8 @@ def test_add_count():
     gui.show()
 
     QtTest.QTest.mouseClick(gui.button, QtCore.Qt.LeftButton)
-    assert gui.label.text() == '1'
+    n1 = gui.number
 
     QtTest.QTest.mouseClick(gui.button, QtCore.Qt.LeftButton)
-    assert gui.label.text() == '2'
-
-    app.exec_()
+    n2 = gui.number
+    assert abs(n2 - n1) == 1
