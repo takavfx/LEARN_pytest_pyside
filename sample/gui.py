@@ -30,7 +30,7 @@ class SampleDialog(QtWidgets.QDialog):
 
 
     def add_count(self):
-        self.number += 1
+        self.number += 2
         self.label.setText(str(self.number))
 
 
