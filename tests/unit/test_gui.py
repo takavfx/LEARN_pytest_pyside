@@ -19,4 +19,4 @@ def test_add_count():
 
     QtTest.QTest.mouseClick(gui.button, QtCore.Qt.LeftButton)
     n2 = gui.number
-    assert abs(n2 - n1) == 1
+    assert n2 - n1 == 1
